@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: olist_analytics
+Version: 1.0.0
+Summary: Olist Revenue Drivers Analysis
+Author-email: Agent <agent@example.com>
+Requires-Python: >=3.11
+Requires-Dist: pandas>=2.2
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: statsmodels
+Requires-Dist: sqlalchemy>=2.0
+Requires-Dist: psycopg[binary]>=3
+Requires-Dist: pyyaml
+Requires-Dist: python-dotenv
+Requires-Dist: xlsxwriter
+Requires-Dist: pyarrow
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: jupyter; extra == "dev"
+Requires-Dist: ipykernel; extra == "dev"

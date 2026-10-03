@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/olist_analytics/__init__.py
+src/olist_analytics/__main__.py
+src/olist_analytics/cli.py
+src/olist_analytics/config.py
+src/olist_analytics/db.py
+src/olist_analytics.egg-info/PKG-INFO
+src/olist_analytics.egg-info/SOURCES.txt
+src/olist_analytics.egg-info/dependency_links.txt
+src/olist_analytics.egg-info/requires.txt
+src/olist_analytics.egg-info/top_level.txt

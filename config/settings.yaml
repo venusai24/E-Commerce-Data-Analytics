@@ -1,0 +1,61 @@
+database:
+  url_env: DATABASE_URL            # read from environment / .env
+
+paths:
+  raw_dir: data/raw                # overridden by OLIST_DATA_DIR if set
+  interim_dir: data/interim
+  exports_dir: data/exports
+  reports_dir: reports
+
+cleaning:
+  strict_category_groups: true     # fail build if a category has no group
+  max_row_loss_pct:                # per-table tolerance for rule X1 (percent)
+    orders: 1.0
+    order_items: 1.0
+    order_payments: 1.0
+    order_reviews: 15.0            # review collapse legitimately removes rows
+    customers: 0.0
+    products: 0.0
+    sellers: 0.0
+    geolocation: 100.0             # collapsed to one row per zip prefix by design
+  brazil_bbox:
+    lat_min: -33.75
+    lat_max: 5.27
+    lng_min: -73.99
+    lng_max: -34.79
+  category_patches:                # categories missing from the translation file
+    pc_gamer: pc_gaming
+    portateis_cozinha_e_preparadores_de_alimentos: portable_kitchen_and_food_preparers
+
+analysis:
+  window_start: "2017-01-01"
+  window_end: "2018-08-31"
+  excluded_statuses: [canceled, unavailable]
+  late_threshold_days: 0
+  special_events:
+    - { date: "2017-11-24", name: "Black Friday 2017" }
+  focal_periods:
+    top_n_declines: 3
+    top_n_increases: 2
+    manual:                        # verify these in the data before keeping them
+      - { base: "2017-11", compare: "2017-12", label: "Post-Black-Friday month" }
+      - { base: "2018-05", compare: "2018-06", label: "Mid-2018 slowdown" }
+    yoy: { base_year: 2017, compare_year: 2018, months: [1, 2, 3, 4, 5, 6, 7, 8] }
+  rfm:
+    snapshot_offset_days: 1
+  cohort:
+    max_month_index: 12
+  operations_tests:
+    baseline_window: ["2017-08-01", "2017-10-31"]
+    post_spike_window: ["2017-11-01", "2018-03-31"]
+
+stats:
+  alpha: 0.05
+  bootstrap_resamples: 10000
+  random_seed: 42
+  outliers:
+    method: iqr_log                # IQR on log1p(value)
+    iqr_multiplier: 3.0
+
+export:
+  id_hash_salt_env: ID_HASH_SALT   # optional; defaults to a fixed project salt if unset

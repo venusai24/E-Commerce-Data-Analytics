@@ -1,0 +1,36 @@
+[project]
+name = "olist_analytics"
+version = "1.0.0"
+description = "Olist Revenue Drivers Analysis"
+authors = [{name = "Agent", email = "agent@example.com"}]
+dependencies = [
+    "pandas>=2.2",
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3",
+    "pyyaml",
+    "python-dotenv",
+    "xlsxwriter",
+    "pyarrow",
+    "matplotlib",
+    "seaborn"
+]
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "jupyter",
+    "ipykernel"
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: marks tests as integration tests (deselect with '-m \"not integration\"')"
+]

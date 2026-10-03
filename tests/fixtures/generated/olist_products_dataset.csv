@@ -1,0 +1,11 @@
+product_id,product_category_name,product_name_lenght,product_description_lenght,product_photos_qty,product_weight_g,product_length_cm,product_height_cm,product_width_cm
+p_id_0,esporte_lazer,50,500,1,200,20,20,20
+p_id_1,esporte_lazer,50,500,1,200,20,20,20
+p_id_2,esporte_lazer,50,500,1,200,20,20,20
+p_id_3,esporte_lazer,50,500,1,200,20,20,20
+p_id_4,esporte_lazer,50,500,1,200,20,20,20
+p_id_5,esporte_lazer,50,500,1,200,20,20,20
+p_id_6,esporte_lazer,50,500,1,200,20,20,20
+p_id_7,esporte_lazer,50,500,1,200,20,20,20
+p_id_8,,50,500,1,200,20,20,20
+p_id_9,pc_gamer,50,500,1,200,20,20,20

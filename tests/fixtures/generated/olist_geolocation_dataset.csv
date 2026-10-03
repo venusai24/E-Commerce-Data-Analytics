@@ -1,0 +1,5 @@
+geolocation_zip_code_prefix,geolocation_lat,geolocation_lng,geolocation_city,geolocation_state
+01001,-23.5,-46.6,sao paulo,SP
+01001,-23.5,-46.6,sao paulo,SP
+10001,-23.5,-46.6,campinas,SP
+99999,45.0,-100.0,new york,NY
